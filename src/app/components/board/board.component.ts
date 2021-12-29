@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TaskService } from '../../services/task.service';
 import { ITask } from '../../task';
 
 @Component({
@@ -7,10 +8,20 @@ import { ITask } from '../../task';
   styleUrls: ['./board.component.css'],
 })
 export class BoardComponent implements OnInit {
-  constructor() {}
+  tasks: ITask[] = [];
 
-  ngOnInit(): void {}
+  constructor(private tasksService: TaskService) {}
+
+  ngOnInit(): void {
+    this.tasks = this.tasksService.getAllTasks();
+  }
+
   addTask(task: ITask) {
-    console.log(task);
+    this.tasks.push(task);
+  }
+
+  toggleReminder(task: ITask) {
+    task.reminder = !task.reminder;
+    this.tasksService.updateTaskReminder(task);
   }
 }

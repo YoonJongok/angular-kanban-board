@@ -8,7 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class AddTaskComponent implements OnInit {
   @Output() onAddTask = new EventEmitter();
 
-  task?: string;
+  content?: string;
   day?: string;
   reminder: boolean = false;
 
@@ -17,7 +17,7 @@ export class AddTaskComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    if (!this.task) {
+    if (!this.content) {
       alert('Please add the task!');
       return;
     }
@@ -26,14 +26,14 @@ export class AddTaskComponent implements OnInit {
       return;
     }
     const newTask = {
-      text: this.task,
+      content: this.content,
       day: this.day,
       reminder: this.reminder,
     };
 
     this.onAddTask.emit(newTask);
 
-    this.task = '';
+    this.content = '';
     this.day = '';
     this.reminder = false;
   }
