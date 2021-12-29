@@ -13,15 +13,23 @@ export class BoardComponent implements OnInit {
   constructor(private tasksService: TaskService) {}
 
   ngOnInit(): void {
-    this.tasks = this.tasksService.getAllTasks();
+    this.tasksService.getAllTasks().subscribe((tasks) => (this.tasks = tasks));
   }
 
   addTask(task: ITask) {
-    this.tasks.push(task);
+    this.tasksService.addTask(task).subscribe((t) => this.tasks.push(t));
   }
 
   toggleReminder(task: ITask) {
     task.reminder = !task.reminder;
-    this.tasksService.updateTaskReminder(task);
+    this.tasksService.updateTaskReminder(task).subscribe();
+  }
+
+  clickDelete(task: ITask) {
+    this.tasksService
+      .deleteTask(task)
+      .subscribe(
+        () => (this.tasks = this.tasks.filter((t) => t.id !== task.id))
+      );
   }
 }

@@ -26,6 +26,7 @@ export class AddTaskComponent implements OnInit {
       return;
     }
     const newTask = {
+      id: Date.now(),
       content: this.content,
       day: this.day,
       reminder: this.reminder,

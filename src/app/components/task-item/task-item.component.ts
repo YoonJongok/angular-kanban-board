@@ -11,14 +11,19 @@ import { TaskService } from '../../services/task.service';
 export class TaskItemComponent implements OnInit {
   @Input() task!: ITask;
   @Output() toggleReminder = new EventEmitter();
-
+  @Output() deleteTask = new EventEmitter();
   faTimes = faTimes;
 
-  constructor(private taskService: TaskService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
   onToggleReminder(task: ITask) {
     this.toggleReminder.emit(task);
+  }
+
+  onDeleteTask(task: ITask) {
+    console.log('clicked');
+    this.deleteTask.emit(task);
   }
 }

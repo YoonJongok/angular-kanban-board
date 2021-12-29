@@ -3,9 +3,13 @@
   [ngClass]="{ reminder: task.reminder }"
   (click)="onToggleReminder(task)"
 >
-  <h3>
-    {{ task.content }}
-    <fa-icon [icon]="faTimes"></fa-icon>
-  </h3>
+  <div class="task-content">
+    <h3>
+      {{ task.content }}
+    </h3>
+    <span
+      ><fa-icon (click)="onDeleteTask(task)" [icon]="faTimes"></fa-icon>
+    </span>
+  </div>
   <p>{{ task?.day }}</p>
 </div>
