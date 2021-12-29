@@ -1,0 +1,23 @@
+.kanban-container {
+  /* Positioning */
+  /* position: relative; */
+  /* Display & Box Model */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  width: 100%;
+  max-width: 350px;
+  height: 500px;
+  margin: 30px auto;
+  padding: 0.8rem;
+  border-radius: 50px 50px 10px 10px;
+
+  /* Color */
+  background-color: #130f40;
+  color: white;
+
+  /* Text */
+  color: #dff9fb;
+  /* Other */
+}
