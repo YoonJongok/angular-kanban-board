@@ -8,17 +8,6 @@ body {
   background: #30336b;
 }
 
-/* .container {
-  width: 100%;
-  max-width: 480px;
-  height: 100vh;
-  margin: 3rem auto;
-  padding: 2em 2rem;
-  overflow: auto;
-  border: 1px solid burlywood;
-  border-radius: 10px;
-} */
-
 .btn {
   display: inline-block;
   border: none;
@@ -47,7 +36,8 @@ body {
 }
 
 .form-control {
-  margin: 20px 0;
+  margin: 1.25em 0.25rem;
+  font-size: 1rem;
 }
 
 .form-control label {
@@ -56,10 +46,10 @@ body {
 
 .form-control input {
   width: 100%;
-  height: 40px;
-  margin: 5px;
+  height: 30px;
+  margin: 0.25em 0 0;
   padding: 3px 7px;
-  font-size: 17px;
+  font-size: 1rem;
 }
 
 .form-control-check {

@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContainerComponent } from './components/container/container.component';
 import { BoardComponent } from './components/board/board.component';
 import { ButtonComponent } from './components/button/button.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,9 @@ import { ButtonComponent } from './components/button/button.component';
     ContainerComponent,
     BoardComponent,
     ButtonComponent,
+    AddTaskComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
